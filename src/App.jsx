@@ -9,7 +9,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <Container bg={"#f8fafd"} maxw={"Container.3xl"} height={"100vh"} p={"0"}>
+    <Container bg={"#f8fafd"} maxW={"Container.3xl"} height={"100vh"} p={"0"}>
       <Flex height={"full"}>
         <Box height={"full"} flex={5} w={["20%", "30%", "20%", "50%", "60%"]}>
           <Main />
@@ -20,3 +20,5 @@ function App() {
 }
 
 export default App;
+
+//RETURN TO VIDEO AT 7:52:00
