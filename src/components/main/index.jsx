@@ -1,7 +1,6 @@
 import { Button, Flex, Heading } from "@chakra-ui/react";
 import Summary from "../summary";
 import ExpenseView from "../expense-view";
-import { rollupVersion } from "vite";
 
 export default function Main() {
   return (
