@@ -1,4 +1,4 @@
-import { Box, Flex, Heading } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 
 export default function Summary() {
   return (
@@ -12,7 +12,7 @@ export default function Summary() {
       display={"flex"}
     >
       <Flex
-        w={"full"}
+        w="full"
         justifyContent={"center"}
         alignItems={"center"}
         flexDirection={{
@@ -25,7 +25,7 @@ export default function Summary() {
       >
         <Flex
           flex={1}
-          w={"full"}
+          w="full"
           flexDirection={"column"}
           alignItems={"center"}
           justifyContent={"space-evenly"}
@@ -33,9 +33,50 @@ export default function Summary() {
           mr={"2"}
         >
           <Heading size={"md"} mb={"4"} color={"gray.600"}>
-            Balance is 11000
+            Balance is $100
           </Heading>
+          <Flex
+            justifyContent={"space-evenly"}
+            alignItems={"center"}
+            bg={"gray.50"}
+            w="full"
+            h="100px"
+            border={"1px solid"}
+            borderColor={"gray.100"}
+          >
+            <Flex flexDirection={"column"}>
+              <Heading color={"gray.700"}>$100</Heading>
+              <Text color={"gray.600"}>Total income</Text>
+            </Flex>
+          </Flex>
+          <Flex
+            justifyContent={"space-evenly"}
+            alignItems={"center"}
+            bg={"gray.50"}
+            w="full"
+            h="100px"
+            border={"1px solid"}
+            borderColor={"gray.100"}
+          >
+            <Flex flexDirection={"column"}>
+              <Heading color={"gray.700"}>$100</Heading>
+              <Text color={"gray.600"}>Total expense</Text>
+            </Flex>
+          </Flex>
         </Flex>
+        <Box
+          flex={1}
+          mt={"10"}
+          ml={"-90px"}
+          mr={"5"}
+          width={"300px"}
+          height={"300px"}
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={"center"}
+        >
+          <Heading>Chart</Heading>
+        </Box>
       </Flex>
     </Box>
   );
