@@ -1,8 +1,8 @@
 import Chart from "react-apexcharts";
 
 const options = {
-  labels: ["Expense", "Income"],
-  colors: ["#FD5E53", "#213EBF"],
+  labels: ["Income", "Expense"],
+  colors: ["#213EBF", "#FD5E53"],
   chart: {
     width: "50px",
   },
@@ -31,7 +31,7 @@ const options = {
     },
   },
   fill: {
-    colors: ["#FD5E53", "#213EBF"],
+    colors: ["#213EBF", "#FD5E53"],
   },
   tooltip: {
     enabled: true,
@@ -44,8 +44,8 @@ const options = {
   },
 };
 
-export default function TransactionChartSummary({ expense = 100, income = 500 }) {
-  return <Chart options={options} series={[expense, income]} type="pie" width={"100%"} height={"100%"} />;
+export default function TransactionChartSummary({ income = 100, expense = 500 }) {
+  return <Chart options={options} series={[income, expense]} type="pie" width={"100%"} height={"100%"} />;
 }
 
 //IF THERE IS AN ERROR LATER GO BACK TO 8:09:00 TO FIX THE INCOME AND EXPENSE LABELS
