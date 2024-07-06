@@ -13,7 +13,7 @@ const options = {
       },
     },
   },
-  legenr: {
+  legend: {
     show: false,
   },
   dataLabels: {
