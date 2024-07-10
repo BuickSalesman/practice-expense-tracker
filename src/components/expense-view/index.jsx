@@ -22,6 +22,7 @@ export default function ExpenseView({ type, data }) {
       {data.map((item) => (
         <>
           <Flex
+            key={item.id}
             bg={type === "expense" ? "red.50" : "blue.50"}
             mt={"4"}
             justifyContent={"space-between"}
@@ -31,7 +32,7 @@ export default function ExpenseView({ type, data }) {
             p={"4"}
             borderRadius={"8"}
           >
-            <Flex alignItems={"center"} justifyContent={"center"}>
+            <Flex key={item.id + item.description} alignItems={"center"} justifyContent={"center"}>
               <Text ml="3" fontWeight="bold" color="gray.600">
                 {item.description}
               </Text>

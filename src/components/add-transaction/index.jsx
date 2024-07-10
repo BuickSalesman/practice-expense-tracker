@@ -62,6 +62,7 @@ export default function TransactionForm({ onClose, isOpen }) {
               >
                 Income
               </Radio>
+              <div></div>
               <Radio
                 checked={formData.type === "expense"}
                 value="expense"
