@@ -20,9 +20,8 @@ export default function ExpenseView({ type, data }) {
         </Heading>
       </Flex>
       {data.map((item) => (
-        <>
+        <div key={item.id}>
           <Flex
-            key={item.id}
             bg={type === "expense" ? "red.50" : "blue.50"}
             mt={"4"}
             justifyContent={"space-between"}
@@ -39,7 +38,7 @@ export default function ExpenseView({ type, data }) {
             </Flex>
             <Text>$ {item.amount}</Text>
           </Flex>
-        </>
+        </div>
       ))}
     </Box>
   );
