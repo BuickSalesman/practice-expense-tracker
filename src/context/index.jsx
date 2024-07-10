@@ -4,7 +4,7 @@ export const GlobalContext = createContext(null);
 
 export default function GlobalState({ children }) {
   const [formData, setFormData] = useState({
-    type: "expense",
+    type: "income",
     amount: 0,
     description: "",
   });
@@ -17,7 +17,7 @@ export default function GlobalState({ children }) {
   function handleFormSubmit(currentFormData) {
     if (!currentFormData.description || !currentFormData.amount) return;
 
-    setAllTransactions([...allTransactions, { currentFormData, id: Date.now() }]);
+    setAllTransactions([...allTransactions, { ...currentFormData, id: Date.now() }]);
   }
 
   console.log(allTransactions);

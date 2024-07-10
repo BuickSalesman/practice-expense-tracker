@@ -6,7 +6,7 @@ import { GlobalContext } from "../../context";
 
 export default function Main() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { allTransactions, totalExpense, setTotalExpense, totalIncome, setTotalIncome } = useContext(GlobalContext);
+  const { totalExpense, allTransactions, setTotalExpense, totalIncome, setTotalIncome } = useContext(GlobalContext);
 
   useEffect(() => {
     let income = 0;
@@ -20,7 +20,7 @@ export default function Main() {
 
     setTotalExpense(expense);
     setTotalIncome(income);
-  }, [setTotalExpense, setTotalIncome, allTransactions]);
+  }, [allTransactions]);
 
   return (
     <Flex textAlign={"center"} flexDirection={"column"} pr={"5"} pl={"5"}>
@@ -35,14 +35,15 @@ export default function Main() {
         </Flex>
       </Flex>
       <Summary totalExpense={totalExpense} totalIncome={totalIncome} isOpen={isOpen} onClose={onClose} />
+
       <Flex
-        w={"full"}
+        w="full"
         alignItems={"flex-start"}
         justifyContent={"space-evenly"}
-        flexDirection={("column", "column", "column", "row", "row")}
+        flexDirection={["column", "column", "column", "row", "row"]}
       >
-        <ExpenseView />
-        <ExpenseView />
+        <ExpenseView data={allTransactions.filter((item) => item.type === "expense")} type={"expense"} />
+        <ExpenseView data={allTransactions.filter((item) => item.type === "income")} type={"income"} />
       </Flex>
     </Flex>
   );

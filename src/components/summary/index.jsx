@@ -35,7 +35,7 @@ export default function Summary({ onClose, isOpen, totalExpense, totalIncome }) 
           mr={"2"}
         >
           <Heading size={"md"} mb={"4"} color={"gray.600"}>
-            Balance is {totalIncome - totalExpense}
+            Balance is $ {totalIncome - totalExpense}
           </Heading>
           <Flex
             justifyContent={"space-evenly"}
@@ -47,7 +47,7 @@ export default function Summary({ onClose, isOpen, totalExpense, totalIncome }) 
             borderColor={"gray.100"}
           >
             <Flex flexDirection={"column"}>
-              <Heading color={"gray.700"}>{totalIncome}</Heading>
+              <Heading color={"gray.700"}>$ {totalIncome}</Heading>
               <Text color={"gray.600"}>Total income</Text>
             </Flex>
           </Flex>
@@ -61,7 +61,7 @@ export default function Summary({ onClose, isOpen, totalExpense, totalIncome }) 
             borderColor={"gray.100"}
           >
             <Flex flexDirection={"column"}>
-              <Heading color={"gray.700"}>{totalExpense}</Heading>
+              <Heading color={"gray.700"}>$ {totalExpense}</Heading>
               <Text color={"gray.600"}>Total expense</Text>
             </Flex>
           </Flex>
@@ -78,7 +78,7 @@ export default function Summary({ onClose, isOpen, totalExpense, totalIncome }) 
           justifyContent={"center"}
         >
           <Heading>
-            <TransactionChartSummary expense={500} income={1000} />
+            <TransactionChartSummary expense={totalExpense} income={totalIncome} />
           </Heading>
         </Box>
       </Flex>
